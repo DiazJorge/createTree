@@ -1,0 +1,112 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>algoritmos de Búsqueda</title>
+        <script type="text/javascript" src="vis/dist/vis.js"></script>
+        <script src="funciones.js" type="text/javascript"></script>
+        <link rel="stylesheet" type="text/css" href="estilos.css">
+    </head>
+
+    <body onload="dibujar();">
+        <h1>Configuración Inicial</h1>
+
+        <table align="center" >
+            <tr>
+                <td>
+                    <h2>Nodos</h2>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><label for="nodo-id">Id:</label></td>
+                            <td><input id="nodo-id" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="nodo-label">Nombre:</label></td>
+                            <td><input id="nodo-label" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="nodo-label" style="visibility: hidden" ></label></td>
+                            <td><input id="nodo-label" type="text" style="visibility: hidden"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Acción:</td>
+                            <td>
+                                <button id="nodo-agregar" onclick="agregarNodo();">Agregar</button>
+                                <!--button id="nodo-actualizar" onclick="actualizarNodo();">Actualizar</button-->
+                                <button id="nodo-eliminar" onclick="eliminarNodo();">Eliminar</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="15"></td>
+                <td>
+                    <h2>Aristas</h2>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><label for="arista-id">id:</label></td>
+                            <td><input id="arista-id" type="text" value="1"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="arista-from">Desde:</label></td>
+                            <td><input id="arista-from" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="arista-to">Hasta:</label></td>
+                            <td><input id="arista-to" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="arista-costo">Costo:</label></td>
+                            <td><input id="arista-costo" type="number"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Acción:</td>
+                            <td>
+                                <button id="arista-agregar" onclick="agregarArista();">Agregar</button>
+                                <!--button id="arista-actualizar" onclick="actualizarArista();">Actualizar</button-->
+                                <button id="arista-eliminar" onclick="eliminarArista();">Eliminar</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+
+        <br><br>
+        <center>
+            <p>elija un tipo de búsqueda</p>
+            <select name="opciones" id="opciones">opcniog
+                <option value="1">Preferente por amplitud</option>
+                <option value="2">Preferente por profundidad</option>
+                <option value="3">Por profundidad limitada</option>
+                <option value="4">Por profundización iterativa</option>
+                <option value="5">Por costo uniforme</option>
+            </select>
+            <button id="solve" onclick="resolver();">Resolver</button>
+            <p id="demo" ></p>
+        </center>
+
+        <table class="view">
+            <colgroup>
+                <col width="60%">
+            </colgroup>
+            <tr>
+                <td>
+                    <h2>Network</h2>
+                    <div id="network"></div>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
