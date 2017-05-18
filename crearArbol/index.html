@@ -5,23 +5,25 @@
         <meta charset="utf-8">
         <title>algoritmos de Búsqueda</title>
         <script type="text/javascript" src="vis/dist/vis.js"></script>
-        <script src="funciones.js" type="text/javascript"></script>
-        <link rel="stylesheet" type="text/css" href="estilos.css">
+        <script type="text/javascript" src="js/algoritmos.js"></script>
+        <script type="text/javascript" src="js/funciones.js" ></script>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
     </head>
 
     <body onload="dibujar();">
-        <h1>Configuración Inicial</h1>
+
+    <section id="franja">
+      <div id="franja_contenedor">
+        <div id="titulo_index"><p>Algoritmos de Búsqueda Ciega</p></div>
+      </div>
+    </section>
+    <br>
 
         <table align="center" >
             <tr>
                 <td>
                     <h2>Nodos</h2>
                     <table>
-                        <tr>
-                            <td></td>
-                            <td><label for="nodo-id">Id:</label></td>
-                            <td><input id="nodo-id" type="text"></td>
-                        </tr>
                         <tr>
                             <td></td>
                             <td><label for="nodo-label">Nombre:</label></td>
@@ -36,10 +38,14 @@
                             <td></td>
                             <td>Acción:</td>
                             <td>
-                                <button id="nodo-agregar" onclick="agregarNodo();">Agregar</button>
-                                <!--button id="nodo-actualizar" onclick="actualizarNodo();">Actualizar</button-->
-                                <button id="nodo-eliminar" onclick="eliminarNodo();">Eliminar</button>
+                                <button id="nodo-agregar" class="botones" onclick="agregarNodo();">Agregar</button>
+                                <button id="nodo-eliminar" class="botones" onclick="eliminarNodo();">Eliminar</button>
                             </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="nodo-label" style="visibility: hidden" ></label></td>
+                            <td><input id="nodo-label" type="text" style="visibility: hidden"></td>
                         </tr>
                     </table>
                 </td>
@@ -47,11 +53,6 @@
                 <td>
                     <h2>Aristas</h2>
                     <table>
-                        <tr>
-                            <td></td>
-                            <td><label for="arista-id">id:</label></td>
-                            <td><input id="arista-id" type="text" value="1"></td>
-                        </tr>
                         <tr>
                             <td></td>
                             <td><label for="arista-from">Desde:</label></td>
@@ -65,15 +66,14 @@
                         <tr>
                             <td></td>
                             <td><label for="arista-costo">Costo:</label></td>
-                            <td><input id="arista-costo" type="number"></td>
+                            <td><input id="arista-costo" type="number" value = "1"></td>
                         </tr>
                         <tr>
                             <td></td>
                             <td>Acción:</td>
                             <td>
-                                <button id="arista-agregar" onclick="agregarArista();">Agregar</button>
-                                <!--button id="arista-actualizar" onclick="actualizarArista();">Actualizar</button-->
-                                <button id="arista-eliminar" onclick="eliminarArista();">Eliminar</button>
+                                <button id="arista-agregar" class="botones" onclick="agregarArista();">Agregar</button>
+                                <button id="arista-eliminar" class="botones" onclick="eliminarArista();">Eliminar</button>
                             </td>
                         </tr>
                     </table>
@@ -82,9 +82,16 @@
 
         </table>
 
-        <br><br>
-        <center>
-            <p>elija un tipo de búsqueda</p>
+    <div class="entradas">
+        <div class="valores" >
+        <br>
+            <label id="datos">Nodo Inicial: </label><input type="text" id="txt_nodo_ini" />
+            <br>
+            <label id="datos">Nodo Final: </label><input type="text" id="txt_nodo_final" />
+            <br>
+            <label id="datos">Límite: </label><input type="text" id="Limite" />
+            <br><br>
+            <label id="datos">Búsqueda: </label>           
             <select name="opciones" id="opciones">opcniog
                 <option value="1">Preferente por amplitud</option>
                 <option value="2">Preferente por profundidad</option>
@@ -92,17 +99,19 @@
                 <option value="4">Por profundización iterativa</option>
                 <option value="5">Por costo uniforme</option>
             </select>
-            <button id="solve" onclick="resolver();">Resolver</button>
-            <p id="demo" ></p>
-        </center>
+            <button id="solve" class="botones" onclick="resolver();">Resolver</button>
 
+            <h3>Ruta: <span id="txt_ruta"></span></h3>
+            <h3>Nodos visitados: <span id="txt_nodos_visitados"></span></h3>
+        </div>       
+    </div>
+    <br><br><br><br>
         <table class="view">
             <colgroup>
                 <col width="60%">
             </colgroup>
             <tr>
                 <td>
-                    <h2>Network</h2>
                     <div id="network"></div>
                 </td>
             </tr>
