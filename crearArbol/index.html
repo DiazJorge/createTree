@@ -1,0 +1,121 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>algoritmos de Búsqueda</title>
+        <script type="text/javascript" src="vis/dist/vis.js"></script>
+        <script type="text/javascript" src="js/algoritmos.js"></script>
+        <script type="text/javascript" src="js/funciones.js" ></script>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+
+    <body onload="dibujar();">
+
+    <section id="franja">
+      <div id="franja_contenedor">
+        <div id="titulo_index"><p>Algoritmos de Búsqueda Ciega</p></div>
+      </div>
+    </section>
+    <br>
+
+        <table align="center" >
+            <tr>
+                <td>
+                    <h2>Nodos</h2>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><label for="nodo-label">Nombre:</label></td>
+                            <td><input id="nodo-label" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="nodo-label" style="visibility: hidden" ></label></td>
+                            <td><input id="nodo-label" type="text" style="visibility: hidden"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Acción:</td>
+                            <td>
+                                <button id="nodo-agregar" class="botones" onclick="agregarNodo();">Agregar</button>
+                                <button id="nodo-eliminar" class="botones" onclick="eliminarNodo();">Eliminar</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="nodo-label" style="visibility: hidden" ></label></td>
+                            <td><input id="nodo-label" type="text" style="visibility: hidden"></td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="15"></td>
+                <td>
+                    <h2>Aristas</h2>
+                    <table>
+                        <tr>
+                            <td></td>
+                            <td><label for="arista-from">Desde:</label></td>
+                            <td><input id="arista-from" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="arista-to">Hasta:</label></td>
+                            <td><input id="arista-to" type="text"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><label for="arista-costo">Costo:</label></td>
+                            <td><input id="arista-costo" type="number" value = "1"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>Acción:</td>
+                            <td>
+                                <button id="arista-agregar" class="botones" onclick="agregarArista();">Agregar</button>
+                                <button id="arista-eliminar" class="botones" onclick="eliminarArista();">Eliminar</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+        </table>
+
+    <div class="entradas">
+        <div class="valores" >
+        <br>
+            <label id="datos">Nodo Inicial: </label><input type="text" id="txt_nodo_ini" />
+            <br>
+            <label id="datos">Nodo Final: </label><input type="text" id="txt_nodo_final" />
+            <br>
+            <label id="datos">Límite: </label><input type="text" id="Limite" />
+            <br><br>
+            <label id="datos">Búsqueda: </label>           
+            <select name="opciones" id="opciones">opcniog
+                <option value="1">Preferente por amplitud</option>
+                <option value="2">Preferente por profundidad</option>
+                <option value="3">Por profundidad limitada</option>
+                <option value="4">Por profundización iterativa</option>
+                <option value="5">Por costo uniforme</option>
+            </select>
+            <button id="solve" class="botones" onclick="resolver();">Resolver</button>
+
+            <h3>Ruta: <span id="txt_ruta"></span></h3>
+            <h3>Nodos visitados: <span id="txt_nodos_visitados"></span></h3>
+        </div>       
+    </div>
+    <br><br><br><br>
+        <table class="view">
+            <colgroup>
+                <col width="60%">
+            </colgroup>
+            <tr>
+                <td>
+                    <div id="network"></div>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+</html>
