@@ -1,0 +1,66 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>algoritmos de Búsqueda</title>
+        <script type="text/javascript" src="vis/dist/vis.js"></script>
+        <script type="text/javascript" src="js/algoritmos.js"></script>
+        <script type="text/javascript" src="js/funciones.js" ></script>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+
+    <body onload="dibujar();">
+
+    <section id="franja">
+      <div id="franja_contenedor">
+        <div id="titulo_index"><p>Algoritmos de Búsqueda Ciega</p></div>
+      </div>
+    </section>
+    <br>
+        <br>
+    <div class="entradas">
+        <div class="A"><br>
+            <h2>Nodos</h2><br>
+            <button id="nodo-agregar" class="botones" onclick="agregarNodo();">Agregar</button>
+        </div>
+        <div class="B"><br>
+            <h2>Aristas</h2><br>
+            <input type="number"  id="arista-costo" placeholder="costo"><br><br>
+        </div><br>
+        <div class="C" >
+            <h2>Búsqueda</h2>
+            
+            <select class="pres" name="opciones" id="opciones">opciones
+                <option value="1">Preferente por amplitud</option>
+                <option value="2">Preferente por profundidad</option>
+                <option value="3">Por profundidad limitada</option>
+                <option value="4">Por profundización iterativa</option>
+                <option value="5">Por costo uniforme</option>
+            </select><br>
+            <input type="number" class="bot" id="txt_nodo_ini" placeholder="inicio" />
+            <input type="number" class="bot" id="txt_nodo_final" placeholder="Final" /><br>
+            &nbsp;<input type="number" id="Limite" placeholder="Límite" />
+            <br><br>
+            <button id="solve" class="botones" onclick="resolver();">Resolver</button>
+        </div>  
+    </div>
+        <table class="view">
+            <colgroup>
+                <col width="60%">
+            </colgroup>
+                        
+            <tr>
+                <td>
+                    <div id="network"></div>
+                    <pre id="eventSpan"></pre>
+                </td>
+            </tr>
+        </table>
+         <div align="center">  
+        <h3>Ruta: <span id="txt_ruta"></span></h3>
+        <h3>Nodos visitados: <span id="txt_nodos_visitados"></span></h3>
+    </div>
+    </div>
+    </body>
+</html>
